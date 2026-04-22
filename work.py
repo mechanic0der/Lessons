@@ -40,14 +40,14 @@ def lesson_2():
 
 def lesson_3():
     name = input("Введите название товара: ")
-    сount = int(input("Введите количество товара: "))
+    count = int(input("Введите количество товара: "))
     price = int(input("Введите цену товара: "))
-    sum = сount * price
+    summary = count * price
     d = int(input("Введите количество денег: "))
-    if d >= sum:
-        print(f"Вы можете купить товар {name}. Ваша сдача: {d - sum}")
+    if d >= summary:
+        print(f"Вы можете купить товар {name}. Ваша сдача: {d - summary}")
     else:
-        print(f"Вы не можете купить товар. Вам не хватает денег: {sum - d}")
+        print(f"Вы не можете купить товар. Вам не хватает денег: {summary - d}")
 
 
 def lesson_4():
@@ -925,8 +925,8 @@ def lesson_92():
     print(data)
     print(type(data))
     print(data[1])
-    значение = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    print(значение)
+    value = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    print(value)
 
 
 def lesson_93():
@@ -1054,24 +1054,24 @@ def lesson_98():
 
 def lesson_99():
     """
-📌 Задача 4 — добавление элементов
-создать список:
-[1, 2, 3]
-Добавить число 4
-вывести список.
+        📌 Задача 4 — добавление элементов
+        создать список:
+        [1, 2, 3]
+        Добавить число 4
+        вывести список.
     """
-    line = [1,2,3]
+    line = [1, 2, 3]
     line.append(4)
     print(line)
 
 
 def lesson_100():
     """
-    📌 Задача 5 — удаление элементов
-создать список:
-[5, 3, 8, 3, 10]
-Удалить число 3 и последний элемент списка
-вывести результат.
+        📌 Задача 5 — удаление элементов
+        создать список:
+        [5, 3, 8, 3, 10]
+        Удалить число 3 и последний элемент списка
+        вывести результат.
     """
     line = [5, 3, 8, 3, 10]
     line.remove(3)
@@ -1126,7 +1126,7 @@ cоздать список:
 
 
 def lesson_104():
-    line = [1,2,3]
+    line = [1, 2, 3]
     b = line
     b.append(4)
     print(line)
@@ -1152,49 +1152,30 @@ def lesson_105():
 
 def lesson_106():
     print("1 - добавить гостя\n2 - удалить гостя\n3 - список гостей\n4 - количество гостей")
-    guests = ["Анна","Иван","Мария"]
+    guests = ["Анна", "Иван", "Мария"]
     choose = int(input("Введите номер : "))
     match choose:
         case 1:
             name = input("Введите имя : ")
-            if  name in guests:
+            if name in guests:
                 print("Такой гость уже есть")
             else:
                 guests.append(name)
                 print("Гость добавлен")
         case 2:
             name = input("Введите имя : ")
-            if not name in guests:
+            if name not in guests:
                 print("Такого гостя нету")
             else:
                 guests.remove(name)
                 print("Гость удалён")
         case 3:
-             for i in guests:
-                 print(i)
+            for i in guests:
+                print(i)
         case 4:
             print(len(guests))
         case _:
             print("Ошибка")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 if __name__ == "__main__":
