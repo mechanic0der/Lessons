@@ -982,30 +982,30 @@ def lesson_95():
         print(line[i])
     line.append(1000000000000000000000000000000000000000000000000000000000000)
     print(line)
-    hehehehehe = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    print(len(hehehehehe))
+    value = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    print(len(value))
     #hehehehehe.append(line)
-    print(len(hehehehehe))
-    print(hehehehehe)
-    hehehehehe.extend(line)
-    print(hehehehehe)
-    print(len(hehehehehe))
-    hehehehehe.extend([456782865467746464664646466466464667, "nfgjjt", True, False, 12.3])
-    print(hehehehehe)
-    print(len(hehehehehe))
-    hehehehehe.pop()
-    print(hehehehehe)
-    hehehehehe.pop(15)
-    print(hehehehehe)
-    hehehehehe.remove(456782865467746464664646466466464667)
-    hehehehehe.remove("nfgjjt")
-    print(hehehehehe)
+    print(len(value))
+    print(value)
+    value.extend(line)
+    print(value)
+    print(len(value))
+    value.extend([456782865467746464664646466466464667, "nfgjjt", True, False, 12.3])
+    print(value)
+    print(len(value))
+    value.pop()
+    print(value)
+    value.pop(15)
+    print(value)
+    value.remove(456782865467746464664646466466464667)
+    value.remove("nfgjjt")
+    print(value)
     print("----------------------------------------")
-    hehehehehe.sort()
-    print(hehehehehe)
+    value.sort()
+    print(value)
     print(-3 * True)
-    hehehehehe.sort(reverse=True)
-    print(hehehehehe)
+    value.sort(reverse=True)
+    print(value)
     ages = [1, 3, 2, 10, 4, 5, 6, 7, 8, 9]
     ages.reverse()
     print(ages)
@@ -1845,7 +1845,7 @@ year
 со значением:
 1939
     """
-    book = {"title": "Волшебник изумрудного города","author": "Александр Волков"}
+    book = {"title": "Волшебник изумрудного города", "author": "Александр Волков"}
     book["year"] = 1939
 
 
@@ -1987,7 +1987,564 @@ def lesson_138():
         if 5 > i > 2:
             print(i)
 
+def lesson_139():
+    movie = {"title": "лего фильм", "year": 2014, "genre": "комедия"}
+    nike = {"pepe": "эдгар", "fffffff": "uhjf"}
+    movie.popitem()
+    print(movie)
+    nike.update(movie)
+    print(nike)
+    nike.clear()
+    print(nike)
+    keys = ["имя", "город", "зарплата"]
+    values = ["Петя", "Москва", 123456789]
+    value = "не задано"
+    person = dict.fromkeys(keys, value)
+    print(person)
+    double = {i: i * 2 for i in range(1, 7)}
+    print(double)
+    print("-------------------------------")
+    a = ["jfjdjnfjfjn"]
+    b = a.copy()
+    b.clear()
+    print(a)
+    print(b)
+
+
+def lesson_140():
+    """
+    📌 Задача 1. Обновление профиля
+Есть словарь:
+user = {
+    "name": "Иван",
+    "age": 20
+}
+Пользователь вводит:
+город
+возраст (новый)
+Обновить словарь
+Вывести обновлённый словарь.
+    """
+    user = {"name": "Иван", "age": 20}
+    nike = {"city": input(), "age": int(input())}
+    user.clear()
+    user.update(nike)
+    print(user)
+
+
+def lesson_141():
+    """
+    📌 Задача 2. Объединение словарей
+Есть:
+a = {"x": 1, "y": 2}
+b = {"z": 3, "y": 10}
+Объединить словари через .update() и вывести результат.
+    """
+    a = {"x": 1, "y": 2}
+    b = {"z": 3, "y": 10}
+    a.update(b)
+    print(a)
+
+
+def lesson_142():
+    """
+    📌 Задача 3. Удаление последнего элемента
+Есть словарь:
+data = {
+    "a": 1,
+    "b": 2,
+    "c": 3
+}
+Удалить последний элемент
+Вывести словарь до и после.
+    """
+    data = {"a": 1, "b": 2, "c": 3}
+    print(data)
+    data.popitem()
+    print(data)
+
+
+def lesson_143():
+    """
+    📌 Задача 4. Очистка словаря
+Есть словарь:
+cart = {
+    "milk": 2,
+    "bread": 1,
+    "cheese": 3
+}
+Очистить словарь
+Вывести результат.
+    """
+    cart = {"milk": 2, "bread": 1, "cheese": 3}
+    cart.clear()
+    print(cart)
+
+
+def lesson_144():
+    """
+    📌 Задача 5. Копия словаря
+Есть словарь:
+original = {
+    "name": "Анна",
+    "score": 100
+}
+Создать копию этого словаря
+Изменить копию и показать, что оригинал не изменился.
+    """
+    original = {"name": "Анна", "score": 100}
+    b = original.copy()
+    b.clear()
+    print(original)
+    print(b)
+
+
+def lesson_145():
+    """
+    📌 Задача 6. Создание словаря из ключей
+Создать список ключей:
+keys = ["a", "b", "c"]
+С помощью .fromkeys() создать словарь:
+a → 0
+b → 0
+c → 0
+    """
+    keys = ["a", "b", "c"]
+    person = dict.fromkeys(keys, 0)
+    print(person)
+
+
+def lesson_146():
+    """
+    📌 Задача 7. fromkeys с текстом
+Создать словарь:
+keys = ["name", "age", "city"]
+Значение по умолчанию:
+unknown
+    """
+    keys = ["name", "age", "city"]
+    person = dict.fromkeys(keys, "неизвестно")
+    print(person)
+
+
+def lesson_147():
+    """
+    📌 Задача 8. Удвоенные числа
+Создать словарь:
+числа от 1 до 5 → их удвоенное значение
+Результат:
+1:2, 2:4, 3:6, 4:8, 5:10
+    """
+    numbers = {i: i * 2 for i in range(1, 6)}
+    print(numbers)
+
+
+def lesson_148():
+    """
+    📌 Задача 9. Чётные числа
+Создать словарь:
+от 1 до 10 → только чётные числа
+    """
+    numbers = {i for i in range(1, 11) if i % 2 == 0}
+    print(numbers)
+
+
+def lesson_149():
+    """
+    📌 Задача 10. Символ → длина строки
+Есть список:
+words = ["кот", "собака", "питон"]
+Создать словарь:
+кот → 3
+собака → 6
+питон → 5
+    """
+    words = ["кот", "собака", "питон"]
+    words_dict = dict()
+    for w in words:
+        words_dict.update({w: len(w)})
+    print(words_dict)
+
+
+def lesson_150():
+    """
+    📌 Задача 11. Обновление и удаление
+Есть словарь:
+data = {"a": 1, "b": 2, "c": 3}
+Необходимо:
+- удалить последний элемент
+- добавить "d": 4
+- изменить "a" → 100
+Использовать:
+popitem, update
+    """
+    data = {"a": 1, "b": 2, "c": 3}
+    data.popitem()
+    data["d"] = 4
+    data["a"] = 100
+    print(data)
+
+
+def lesson_151():
+    numbers = {1, 2, 3, 4, 5}
+    print(type(numbers))
+    numbers.add(6)
+    numbers.add(5)
+    print(numbers)
+    numbers.remove(5)
+    print(numbers)
+    ghjjhlhjk = {5, 3, "gfjg", 4, True, "bfvbfvb", 0, False}
+    print(ghjjhlhjk)
+    a = {1, 2, 3}
+    b = {3, 4, 5}
+    print(a | b)
+    print(a & b)
+    print(a - b)
+    print(a ^ b)
+
+
+def lesson_152():
+    digits_list = [1, 1, 2, 2, 3, 4, 5, 5]
+    print(digits_list)
+    print(type(digits_list))
+    digits_list = tuple(digits_list)
+    print(digits_list)
+    print(type(digits_list))
+    digits_list = set(digits_list)
+    print(digits_list)
+    print(type(digits_list))
+    digits_list = list(digits_list)
+    print(digits_list)
+    print(type(digits_list))
+
+
+def lesson_153():
+    """
+    📌 Задача 1. Уникальные буквы
+    Пользователь вводит слово.
+    Создать множество из букв слова.
+    Пример:
+    hello
+    Результат:
+    {'h', 'e', 'l', 'o'}
+    """
+    hello = {"h", "e", "l", "l", "o"}
+    print(hello)
+
+
+def lesson_154():
+    """
+    📌 Задача 2. Добавление элемента
+Есть множество:
+fruits = {"яблоко", "банан"}
+Добавить:
+груша
+    """
+    fruits = {"яблоко", "банан"}
+    fruits.update("груша")
+    print(fruits)
+
+
+def lesson_155():
+    """
+    📌 Задача 3. Удаление элемента
+Удалить:
+банан
+    """
+    fruits = {"яблоко", "банан"}
+    fruits.remove("банан")
+    print(fruits)
+
+
+def lesson_156():
+    """
+    📌 Задача 4. Вывести элементы множества
+Есть множество:
+colors = {"красный", "синий", "зелёный"}
+Вывести все элементы через цикл for.
+    """
+    colors = {"красный", "синий", "зелёный"}
+    for i in colors:
+        print(i)
+
+
+def lesson_157():
+    """
+    📌 Задача 5. Подсчёт элементов
+Вывести количество элементов множества
+    """
+    colors = {"красный", "синий", "зелёный"}
+    print(len(colors))
+
+
+def lesson_158():
+    """
+    📌 Задача 6. Общие элементы
+Есть множества:
+a = {1, 2, 3, 4}
+b = {3, 4, 5, 6}
+Найти общие элементы.
+    """
+    a = {1, 2, 3, 4}
+    b = {3, 4, 5, 6}
+    print(a & b)
+
+
+def lesson_159():
+    """
+    📌 Задача 7. Все уникальные элементы
+Найти все элементы из двух множеств.
+    """
+    a = {1, 2, 3, 4}
+    b = {3, 4, 5, 6}
+    print(a | b)
+
+
+def lesson_160():
+    """
+    📌 Задача 8. Разница множеств
+Найти элементы, которые есть только в первом множестве
+    """
+    a = {1, 2, 3, 4}
+    b = {3, 4, 5, 6}
+    print(a^b-b)
+
+
+def lesson_161():
+    """
+    📌 Задача 9. Уникальные слова
+Пользователь вводит текст.
+Вывести:
+все уникальные слова текста
+    """
+    a = input()
+    a = a.split()
+    a = set(a)
+    print(a)
+
+
+def lesson_162():
+    """
+    📌 Задача 10. Проверка общих друзей
+Есть множества:
+user1 = {"Анна", "Иван", "Мария"}
+user2 = {"Иван", "Олег", "Мария"}
+Вывести:
+общих друзей
+    """
+    user1 = {"Анна", "Иван", "Мария"}
+    user2 = {"Иван", "Олег", "Мария"}
+    print(user1 & user2)
+
+
+def lesson_163():
+    """
+    📌 Задача 11. Какие предметы выбрал только один ученик
+Есть множества:
+student1 = {"математика", "физика", "информатика"}
+student2 = {"математика", "биология", "химия"}
+Вывести предметы, которые не совпадают.
+    """
+    student1 = {"математика", "физика", "информатика"}
+    student2 = {"математика", "биология", "химия"}
+    print(student1^student2)
+
+
+def lesson_164():
+    movies = [
+        {"title": "Интерстеллар", "year": 2014, "rating": 8.7},
+        {"title": "Начало", "year": 2010, "rating": 8.8},
+        {"title": "Матрица", "year": 1999, "rating": 8.5}
+    ]
+    for value in movies:
+        print(value['title'])
+    for i in movies[1]:
+        print(movies[1][i])
+    print("----------------------------")
+    mini = 2452879873979872982377
+    for i in movies:
+        if i['year']<mini:
+            mini = i['year']
+    print(mini)
+
+
+def lesson_165():
+    """
+    📌 Задача 1. Мини-база игр
+Создать список словарей:
+games = [
+    {"name": "Minecraft", "players": 200, "genre": "sandbox"},
+    {"name": "CS2", "players": 150, "genre": "shooter"},
+    {"name": "Terraria", "players": 90, "genre": "sandbox"}
+]
+Что должна делать программа
+1. Показать все игры
+Вывод:
+Minecraft — sandbox — 200 игроков
+CS2 — shooter — 150 игроков
+Terraria — sandbox — 90 игроков
+2. Найти игру с максимальным количеством игроков
+Вывести:
+Самая популярная игра: Minecraft
+3. Показать только игры жанра sandbox
+4. Добавить новую игру
+Пользователь вводит:
+название
+жанр
+онлайн
+Добавить словарь в список.
+    """
+    games = [
+        {"name": "Minecraft", "players": 200, "genre": "sandbox"},
+        {"name": "CS2", "players": 150, "genre": "shooter"},
+        {"name": "Terraria", "players": 90, "genre": "sandbox"}
+    ]
+    players_max = 0
+    for i in games:
+        print(i)
+    for i in games:
+        if i["players"]>players_max:
+            players_max = i["players"]
+    print(players_max)
+    for i in games:
+        if i["genre"] == "sandbox":
+            print(i)
+    name = input("name: ")
+    players = int(input("players: "))
+    genre = input("genre: ")
+    games.append({"name": name})
+    games[3]["players"] = players
+    games[3]["genre"] = genre
+    print(games[3])
+
+
+def lesson_166():
+    """
+    📌 Задача 2 — база супергероев Marvel
+Создать список словарей:
+heroes = [
+    {"name": "Железный человек", "power": 95, "team": "Мстители"},
+    {"name": "Тор", "power": 100, "team": "Мстители"},
+    {"name": "Локи", "power": 85, "team": "Асгард"}
+]
+Что должна делать программа
+1. Вывести всех героев
+Пример:
+Железный человек — сила 95 — команда Мстители
+Тор — сила 100 — команда Мстители
+Локи — сила 85 — команда Асгард
+2. Найти самого сильного героя
+Вывести:
+Самый сильный герой: Тор
+3. Показать только героев команды "Мстители"
+4. Добавить нового героя
+Пользователь вводит:
+имя
+силу
+команду
+Добавить нового героя в список.
+5. Дополнительное задание
+Удалить героя по имени.
+    """
+    heroes = [
+        {"name": "Железный человек", "power": 95, "team": "Мстители"},
+        {"name": "Тор", "power": 100, "team": "Мстители"},
+        {"name": "Локи", "power": 85, "team": "Асгард"}
+    ]
+    power_max = 0
+    for i in heroes:
+        print(f"{i["name"]} - сила {i["power"]} - команда {i["team"]}")
+    for i in heroes:
+        if i["power"]>power_max:
+            power_max = i["power"]
+    print(power_max)
+    for i in heroes:
+        if i["team"] == "Мстители":
+            print(i)
+    name = input("name: ")
+    power = int(input("power: "))
+    team = input("team: ")
+    heroes.append({"name": name})
+    heroes[3]["power"] = power
+    heroes[3]["team"] = team
+    print(heroes[3])
+    man = input("Введите героя: ")
+    if man in heroes[0]["name"]:
+        print(heroes.remove(heroes[0]))
+    if man in heroes[1]["name"]:
+        print(heroes.remove(heroes[1]))
+    if man in heroes[2]["name"]:
+        print(heroes.remove(heroes[2]))
+    if man in heroes[3]["name"]:
+        print(heroes.remove(heroes[3]))
+
+
+def lesson_167():
+    """
+    📌 Задача 3 — база LEGO-наборов
+            Создать список словарей:
+            lego_sets = [
+                {"name": "Звезда Смерти", "pieces": 4016, "theme": "Star Wars"},
+                {"name": "Бэтмобиль", "pieces": 1360, "theme": "DC"},
+                {"name": "Мстители: Башня", "pieces": 5201, "theme": "Marvel"}
+            ]
+            Что должна делать программа
+            1. Показать все наборы
+            Пример:
+            Звезда Смерти — 4016 деталей — Star Wars
+            Бэтмобиль — 1360 деталей — DC
+            Мстители: Башня — 5201 деталей — Marvel
+            2. Найти набор с самым большим количеством деталей
+            Вывести:
+            Самый большой набор: ...
+            3. Показать только наборы Star Wars
+            4. Добавить новый набор
+            Пользователь вводит:
+            название
+            количество деталей
+            тему
+            5. Дополнительное задание
+            Посчитать общее количество деталей всех наборов
+    """
+    lego_sets = [
+        {"name": "Звезда Смерти", "pieces": 4016, "theme": "Star Wars"},
+        {"name": "Бэтмобиль", "pieces": 1360, "theme": "DC"},
+        {"name": "Мстители: Башня", "pieces": 5201, "theme": "Marvel"}
+    ]
+    pieces = 0
+    pieces_max = 0
+    for i in lego_sets:
+        print(f"{i["name"]} - {i["pieces"]} деталей {i["theme"]} ")
+    for i in lego_sets:
+        if i["pieces"]>pieces_max:
+            pieces_max  = i["pieces"]
+    print(pieces_max)
+    for i in lego_sets:
+        if i["theme"] == "Star Wars":
+            print(i)
+    name = input("name: ")
+    pieces:int = int(input("pieces: "))
+    theme = input("theme: ")
+    lego_sets.append({"name": name})
+    lego_sets[3]["pieces"] = pieces
+    lego_sets[3]["theme"] = theme
+    print(lego_sets[3])
+    for i in lego_sets :
+        pieces += i["pieces"]
+    print(pieces)
+
+
+def lesson_168():
+    animals = [
+              {"name": "Ася","view": "кошка","age": 6,"owner": "Артем"}
+    ]
+    max_age = 0
+    for i in animals :
+        if max_age < i["age"]:
+            max_age = i["age"]
+    print(max_age)
+
 
 if __name__ == "__main__":
-    lesson_138()
+    lesson_168()
 
