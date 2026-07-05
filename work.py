@@ -2545,6 +2545,732 @@ def lesson_168():
     print(max_age)
 
 
-if __name__ == "__main__":
-    lesson_168()
+def lesson_169():
+    """
+    📌 Задача 1 — анализ пароля
+Пользователь вводит пароль.
+Программа должна:
+1. вывести длину пароля
+2. вывести пароль наоборот
+3. проверить:
+есть ли цифра
+есть ли символ "!" или ?
+4. вывести:
+Надёжный пароль, если в пароле есть ! или ?  и цифра
+или вывести Слабый пароль
+    """
+    login_correct = False
+    login = input()
+    print(len(login))
+    print(login[::-1])
+    for i in login:
+        if i.isdigit() and  ("!" or "?" in login) :
+            login_correct = True
+    if login_correct:
+        print("пароль надежный")
+    else:
+        print("пароль слабый")
 
+
+def lesson_170():
+    """
+    📌 Задача 2 — работа с числом
+Пользователь вводит число.
+Программа должна:
+1. найти последнюю цифру
+2. удалить последнюю цифру
+3. проверить:
+чётное ли число
+оканчивается ли оно на 5
+    """
+    numbers = int(input())
+    f:int = numbers - numbers % 10
+    print(numbers%10)
+    l=f//10
+    print(l)
+    if numbers%2 == 0:
+        print("число четное")
+    else:
+        print("число не четное")
+    if numbers%10 == 5:
+        print("число оканчивается на 5")
+    else:
+        print("число не оканчивается на 5")
+
+
+def lesson_171():
+    """
+    📌 Задача 3 — бесконечное меню блоков
+Создать список:
+blocks = ["Земля", "TNT", "Камень"]
+Сделать меню:
+1 — показать блоки
+2 — добавить блок
+3 — удалить блок
+4 — найти блок
+0 — выход
+    """
+    blocks = ["Земля", "TNT", "Камень"]
+    while True:
+        print("1 — показать блоки\n2 — добавить блок\n3 — удалить блок\n4 — найти блок\n0 — выход")
+        numbers = int(input())
+        match numbers:
+            case 1:
+                for i in blocks:
+                    if i != "TNT":
+                        print(i)
+            case 2:
+                f = input()
+                blocks.append(f)
+            case 3:
+                f = input()
+                blocks.remove(f)
+            case 4:
+                f = int(input())
+                print(blocks[f])
+            case 0:
+                break
+
+def lesson_172():
+    """
+    📌 Задача 4 — переворот строки
+Пользователь вводит строку.
+Программа должна вывести:
+1. строку наоборот
+2. каждый второй символ (через один)
+3. первые 3 символа
+4. последние 3 символа
+    """
+    l = input()
+    print(l[::-1])
+    for i in l[1::2]:
+        print(i)
+    print(l[0:3])
+    print(l[-3:])
+
+
+def lesson_173():
+    """
+    📌 Задача 5 — подсчёт цифр числа
+Пользователь вводит число.
+Найти:
+1. сумму цифр
+2. количество цифр
+Использовать:
+while
+%
+//
+    """
+
+    number:int = int(input())
+    len_number = 0
+    amount = 0
+    while number > 0:
+        actions = number % 10
+        amount += actions
+        len_number += 1
+        number //= 10
+    print(amount)
+    print(len_number)
+
+
+def lesson_174():
+    """
+    📌 Задача 6 — работа с текстом
+Пользователь вводит текст.
+Программа должна:
+1. перевести текст в верхний регистр
+2. заменить все пробелы на "_"
+3. проверить есть ли слово "python"
+4. посчитать количество букв "а"
+    """
+    line = input()
+    print(line.upper())
+    print(line.replace(" ", "_"))
+    print("python" in line)
+    print(line.count("a"))
+
+
+def lesson_175(name):
+    print("привет",name)
+
+
+def lesson_176(l,g):
+    return l+g
+
+
+def square(number):
+    """
+    📌 Задача 1. Квадрат числа
+Создать функцию:
+square(number)
+которая возводит число в квадрат через:
+и выводит результат.
+Пример:
+square(5)
+↓
+25
+    """
+    print(number ** 2)
+
+
+def greet(name):
+    """
+    📌 Задача 2. Приветствие пользователя
+Создать функцию:
+greet(name)
+которая выводит:
+Привет, {имя_пользователя}!
+    """
+    print(f"привет, {name}")
+
+
+def power(number,degree):
+    """
+    📌 Задача 3. Степень числа
+Создать функцию:
+power(number, degree)
+которая возвращает:
+number в степени degree
+Пример:
+power(2, 5)
+↓
+32
+    """
+    print(number ** degree)
+
+
+def join_words(word1,word2):
+    """
+    📌 Задача 4. Соединение строк
+Создать функцию:
+join_words(word1, word2)
+которая объединяет строки через пробел.
+Пример:
+join_words("Hello", "World")
+↓
+Hello World
+    """
+
+    print(word1 + " " + word2)
+    print(word1,word2,sep=" ")
+
+
+
+
+
+
+
+def last_digit(number):
+    """
+    📌 Задача 5. Последняя цифра числа
+Создать функцию:
+last_digit(number)
+которая возвращает последнюю цифру числа.
+Пример:
+last_digit(123)
+↓
+3
+    """
+    print(number % 10)
+
+
+def is_even(number):
+    """
+    📌 Задача 6. Проверка чётности
+Создать функцию:
+is_even(number)
+которая возвращает:
+True
+если число чётное и
+False
+если нечётное.
+    """
+    if number % 2 == 0:
+        return True
+    else:
+        return False
+
+"""number = int(input())
+    a = is_even(number)
+    if a:
+        print("число четное")
+    else:
+        print("число не четное")
+    if is_even(number):
+        print("число четное")
+    else:
+        print("число не четное")
+        """
+
+
+def greet_2(age,name = "свинка pepe"):
+    return f"Привет {name}.\nТебе {age} лет"
+
+
+def can_withdraw(balance, amount):
+    """
+    Задача 1. Банковская проверка
+Необходимо написать функцию:
+can_withdraw(balance, amount)
+balance - текущий баланс
+amount - сколько хотят снять
+Функция должна проверять возможность снятия денег.
+Правила:
+если amount <= 0 → вернуть "Ошибка!
+Нельзя снять отрицательное количество денег"
+
+если amount > balance → вернуть
+"Ошибка! Недостаточно средств на счёте"
+
+иначе → вернуть "Снято ... денег. На балансе осталось ..." и подставить значения
+Пример использования:
+print(can_withdraw(100, 50))
+print(can_withdraw(100, 150))
+print(can_withdraw(100, -10))
+    """
+    if amount <= 0:
+        return "Нельзя снять отрицательное количество денег"
+    elif amount > balance:
+        return "Ошибка! Недостаточно средств на счёте"
+    else:
+        return f"Снято {amount} денег.\nНа балансе осталось {balance - amount }"
+
+
+def check_login(login):
+    """
+    Задача 2.
+Проверка логина
+Необходимо написать функцию: check_login(login)
+Правила:
+если длина меньше 4 → "Короткий"
+если есть пробел → "Некорректный"
+если есть цифры → "Хороший пароль с цифрами"
+иначе → "Нормальный пароль"
+
+Пример:
+print(check_login("art"))
+print(check_login("art 123"))
+print(check_login("art123"))
+print(check_login("artem"))
+    """
+    if len(login) < 4:
+        return "Короткий"
+    elif " " in login:
+        return "Некорректный"
+    elif not login.isalpha() :
+        return "Хороший пароль с цифрами"
+    else:
+        return "Нормальный пароль"
+
+
+def player_level(points):
+    """
+    Задача 3. Уровень игрока
+Необходимо написать функцию:
+player_level(points)
+Правила:
+0–99 → "новичок"
+100–499 → "обычный"
+500–999 → "профессионал"
+1000+ → "легенда"
+
+Пример:
+print(player_level(50))
+print(player_level(300))
+print(player_level(700))
+print(player_level(1500))
+
+Ожидаемый вывод:
+новичок
+обычный
+профессионал
+легенда
+    """
+    if points <= 99:
+        return "новичок"
+    elif points >= 100 and points <= 499:
+        return "обычный"
+    elif points >= 500 and points <= 999:
+        return "профессионал"
+    else:
+        return "легенда"
+
+
+def format_user(first_name, last_name, city):
+    """
+    Задача 4. Форматирование пользователя (именованные аргументы)
+Необходимо написать функцию:
+format_user(first_name, last_name, city)
+Функция должна возвращать строку:
+Имя Фамилия из Город
+ВАЖНО: Вызов функции должен быть только через именованные аргументы:
+format_user(city="Москва", last_name="Петров", first_name="Иван")
+Пример вывода: Иван Петров из Москва
+    """
+    return f"{first_name} {last_name} из {city}"
+
+
+def report(title, items=0, status="черновик"):
+    """
+    Задача 5. Отчёт (значения по умолчанию)
+Необходимо написать функцию:
+report(title, items=0, status="черновик")
+Функция должна возвращать строку:
+Отчёт: <title> | количество: <items> | статус: <status>
+Пример:
+print(report("Продажи"))
+print(report("Склад", 15))
+print(report("Финансы", 30, "завершён"))
+Ожидаемый вывод:
+Отчёт: Продажи | количество: 0 | статус: черновик
+Отчёт: Склад | количество: 15 | статус: черновик
+Отчёт: Финансы | количество: 30 | статус: завершён
+    """
+    return f"Отчёт: {title} | количество: {items} | статус: {status}"
+
+
+def secure_check(password):
+    """
+    Задача 6. Проверка пароля
+Необходимо написать функцию: secure_check(password)
+
+Правила:
+если длина меньше 6 → "слабый"
+если нет цифры → "нет цифр"
+если нет заглавной буквы → "нет заглавной буквы"
+иначе → "надёжный"
+
+Пример:
+print(secure_check("abc"))
+print(secure_check("abcdef"))
+print(secure_check("abcdef1"))
+print(secure_check("Abcdef1"))
+Ожидаемый вывод:
+слабый
+нет цифр
+нет заглавной буквы
+надёжный
+    """
+    if len(password) < 6:
+        return "слабый"
+    elif password.isalpha():
+        return "нет цифр"
+    elif password.islower():
+        return "нет заглавной буквы"
+    else:
+        return "надёжный"
+
+
+def teleport(x, y, z, shift=10):
+    """
+    Задача 7. Телепорт координат
+Необходимо написать функцию: teleport(x, y, z, shift=10)
+Функция должна возвращать новые координаты:
+x + shift
+y + shift
+z + shift
+Возвращаемое значение: (x, y, z)
+Пример:
+print(teleport(1, 2, 3))
+print(teleport(1, 2, 3, shift=5))
+Ожидаемый вывод: (11, 12, 13) (6, 7, 8)
+    """
+    return x + shift,y + shift,z + shift
+
+a = 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000055665656
+def lesson_177():
+    r = 1,2,3
+    b = a + 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    print(a)
+    print(b)
+    d = a + b
+    print(d)
+    print(y)
+    h.append(d)
+    print(h)
+
+
+visits = 0
+
+def add_visit():
+    global visits
+    """
+    📌 Задача 1. Глобальный счётчик посещений
+    Создай глобальную переменную:
+    visits = 0
+    Необходимо написать функцию:
+    add_visit()
+    При каждом вызове функция должна увеличивать количество посещений на 1 и выводить текущее значение счётчика.
+    Пример:
+    add_visit()
+    add_visit()
+    add_visit()
+    Ожидаемый вывод:
+    Посещений: 1
+    Посещений: 2
+    Посещений: 3
+    """
+    visits += 1
+    print(visits)
+
+
+def show_player():
+    """
+    📌 Задача 2. Локальная переменная игрока
+Необходимо написать функцию:
+show_player()
+Внутри функции создать локальную переменную:
+name = "Артём"
+Вывести её значение.
+После вызова функции попробовать вывести переменную name вне функции.
+Ответить на вопрос:
+Почему возникает ошибка?
+
+Также, Артём, теперь ты можешь понять по этой задаче почему так важно использовать return и в чём заключается его основное назначение
+В начале следующего занятия обязательно с тобой ещё раз это обсудим
+    """
+    name = "Артём"
+    print(name)
+
+
+def first_last(text):
+    return f"Первая буква:{text[0]} , последняя буква:{text[-1]}"
+
+secret_symbol = "#"
+def check_symbol(text):
+    """
+    📌 Задача 4. Проверка секретного символа
+Создать глобальную переменную:
+secret_symbol = "#"
+Необходимо написать функцию:
+check_symbol(text)
+Если первый символ строки совпадает с secret_symbol, вернуть:
+Секретный код найден
+Иначе вернуть:
+Секретный код не найден
+Использовать индексацию строки.
+    """
+    if text[0] == secret_symbol:
+        return "Секретный код найден"
+    else:
+        return "Секретный код не найден"
+
+settings = {
+    "volume": 50,
+    "brightness": 80
+}
+def change_volume(new_volume):
+    """
+    📌 Задача 5. Изменение глобального словаря
+Создать глобальный словарь:
+settings = {
+    "volume": 50,
+    "brightness": 80
+}
+Необходимо написать функцию:
+change_volume(new_volume)
+которая изменяет громкость в словаре.
+После изменения вывести словарь.
+    """
+    settings["volume"] = new_volume
+    print(settings)
+
+
+def lesson_178(*æ2ǔ):
+    print(æ2ǔ)
+    print(type(æ2ǔ))\
+
+
+def lesson_179(*args):
+    amount = 0
+    for i in args:
+        amount += i
+    return amount
+
+
+def lesson_180(**kwargs):
+    print(kwargs)
+    print(type(kwargs))
+
+
+def lesson_181(**kwargs):
+    for key,value in enumerate(kwargs.items()):
+        print(key,value)
+
+
+def lesson_182(**kwargs):
+    for key in kwargs:
+        print(key,":",kwargs[key])
+
+
+def lesson_183(*args,**kwargs):
+    amount = 0
+    for _ in args:
+       amount += 1
+    print(f"количество равно:{amount}")
+    for key,value in kwargs.items():
+        print(key,"-",value)
+
+
+def magic_sum(*args):
+    """
+    📌 Задача 1. Магический калькулятор
+Необходимо написать функцию:
+magic_sum(*args)
+Функция должна принимать любое количество чисел и возвращать их сумму.
+Пример:
+print(magic_sum(1, 2, 3))
+print(magic_sum(10, 20, 30, 40))
+Ожидаемый вывод:
+6
+100
+    """
+    amount = 0
+    for i in args:
+        amount += i
+    print(amount)
+
+
+def highest_mountain(*args):
+    """
+    📌 Задача 2. Самая высокая гора
+Необходимо написать функцию:
+highest_mountain(*args)
+В функцию передаются высоты гор.
+Функция должна вернуть самую высокую гору.
+Пример:
+print(highest_mountain(8849, 5642, 6960, 4808))
+Ожидаемый вывод:
+8849
+    """
+    maxx = 0
+    for i in args:
+        if i > maxx:
+            maxx = i
+    print(maxx)
+
+
+def space_passport(**kwargs):
+    """
+    📌 Задача 3. Космический паспорт
+Необходимо написать функцию:
+space_passport(**kwargs)
+Функция должна вывести всю информацию о космонавте.
+Пример:
+space_passport(
+    name="Артём",
+    planet="Марс",
+    rank="Исследователь"
+)
+Ожидаемый вывод:
+name: Артём
+planet: Марс
+rank: Исследователь
+    """
+    for key,value in kwargs.items():
+        print(key,":",value)
+
+
+def pet_profile(**kwargs):
+    """
+    📌 Задача 4. Профиль питомца
+Необходимо написать функцию:
+pet_profile(**kwargs)
+Функция должна вывести все характеристики питомца.
+Пример:
+pet_profile(
+    name="Барсик",
+    age=3,
+    color="рыжий",
+    weight=5
+)
+Возможный вывод:
+name: Барсик
+age: 3
+color: рыжий
+weight: 5
+    """
+    for key,value in kwargs.items():
+        print(key,":",value)
+
+
+def repeat_word(word,count):
+    """
+    📌 Задача 5. Таинственный повторитель
+Необходимо написать функцию:
+repeat_word(word, count)
+Функция должна вывести слово count раз.
+При этом в цикле использовать:
+for _ in range(...)
+Пример:
+repeat_word("Привет", 3)
+Ожидаемый вывод:
+Привет
+Привет
+Привет
+    """
+    for _ in range(count):
+        print(word)
+
+
+
+def backpack(*args):
+    """
+    📌 Задача 6. Туристический рюкзак
+Необходимо написать функцию:
+backpack(*args)
+В функцию передаются вещи, которые турист берёт в поход.
+Функция должна:
+Вывести все вещи.
+Вывести их количество.
+
+Пример:
+backpack(
+    "палатка",
+    "фонарик",
+    "спальник",
+    "котелок"
+)
+Ожидаемый вывод:
+Палатка
+Фонарик
+Спальник
+Котелок
+
+Всего вещей: 4
+    """
+    amount = 0
+    for i in args:
+        print(i.title())
+        amount += 1
+    print(f"Всего вещей: {amount}")
+
+
+def lesson_184(second):
+    print(second)
+    if second == 0:
+        return "0"
+
+
+def is_valid_callsign(callsign):
+    reasons = []
+    if len(callsign) < 4 or len(callsign) > 12:
+        reasons.append("слишком большой или маленький позывной")
+    if callsign.isalpha():
+        reasons.append("нет цифр")
+    if callsign.islower():
+        reasons.append("нет буквы в верхнем регистре")
+    if callsign.isspace():
+        reasons.append("есть пробел")
+    if callsign[0].isdigit() or callsign[-1].isdigit():
+        reasons.append("первый или последний символ - цифра")
+    return (len(reasons) == 0,",".join(reasons))
+
+
+
+
+
+if __name__ == "__main__":
+    a = is_valid_callsign("A1212we")
+    print(a)
