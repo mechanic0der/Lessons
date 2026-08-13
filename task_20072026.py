@@ -17,10 +17,6 @@ encode_number(153, 3)   → 486  # 1+3=4, 5+3=8, 3+3=6
 decode_sequence([486, 703, 963])
 → [(486, 3, 153), (703, 7, 370)]  # Armstrong numbers found
 """
-import time
-from base64 import decode
-
-
 # def is_armstrong(number: int = 153):
 # Более долгий способ
 # 	arm_sum = 0
