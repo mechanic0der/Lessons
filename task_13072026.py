@@ -25,12 +25,43 @@ first_unique(signals)         → 4  (первая уникальная)
 find_pair(signals, 10)        → (1, 3)  # 3+7=10, индексы 1 и 3
 sliding_anomaly([1,1,1,10,1,1], window=3, threshold=3) → [3]
 """
+from scipy.cluster.hierarchy import single
+
 
 def first_unique(signals):
-	pass
+	for i in signals:
+		if signals.count(i) == 1:
+			return i
+	return -1
 
-def find_pair(signals, threshold):
-	pass
+
+def find_pair(signals, target):
+	for i in range(len(signals)):
+		for j in range(len(signals)):
+			if signals[i] + signals[j] == target:
+				if i < j:
+					return (i, j)
+	return None
+
 
 def sliding_anomaly(signals, window, threshold):
-	pass
+	r = set()
+	for i in range(len(signals) - window + 1):
+		sub_signals = signals[i:i + window]
+		print(sub_signals)
+		s = sum(sub_signals)/len(sub_signals)
+		for k, v in enumerate(sub_signals):
+			print(v, s, threshold)
+			if abs(v - s) > threshold:
+				r.add(i + k)
+	return r
+
+
+if __name__ == '__main__':
+	signals = [4, 3, 2, 7, 8, 2, 3, 1]
+	a = first_unique(signals)
+	g = find_pair(signals, 10)  # 3+7=10, индексы 1 и 3
+	d = sliding_anomaly([1,1,1,10,1,1], window=3, threshold=3)
+	print(a)
+	print(g)
+	print(d)
