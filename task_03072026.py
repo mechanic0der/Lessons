@@ -1,4 +1,4 @@
-from random import random, randint
+from random import randint
 
 
 def create_character(**kwargs):
