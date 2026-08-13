@@ -20,7 +20,6 @@ grid = [
 count_neighbors(grid, 1, 2)  → 2  (астероиды на [0][1] и [1][3])
 find_stations(grid)           → [(0,4), (2,2)]
 """
-from itertools import product
 
 
 def count_neighbors(grid, row, col):
