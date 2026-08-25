@@ -17,7 +17,7 @@ def check_even(number: int):
     Чётное
     """
     numbers = "Чётное" if number % 2 == 0 else "Нечётное"
-    print(numbers)
+    return numbers
 
 
 def lab_access(name):
@@ -37,7 +37,7 @@ print(lab_access("Иван"))
 Доступ запрещён
 """
     entrance = "Добро пожаловать, Артём" if name == "Артём" else "Доступ запрещён"
-    print(entrance)
+    return entrance
 
 
 def robot_zone(distance):
@@ -62,7 +62,7 @@ print(robot_zone(10))
 ЕДЕМ
     """
     movement = "ЕДЕМ" if distance >= 10 else "СТОП"
-    print(movement)
+    return movement
 
 
 def check_part(parts, part_name):
@@ -88,7 +88,7 @@ print(check_part(parts, "камера"))
 
     """
     presence = "Есть в наличии" if part_name in parts else "Нет в наличии"
-    print(presence)
+    return presence
 
 
 if __name__ == '__main__':
