@@ -1,3 +1,6 @@
+from openpyxl.utils import coordinate_to_tuple
+
+
 def check_even(number: int):
     """ 📌 Задача 1. Чётный или нечётный
 
@@ -91,7 +94,46 @@ print(check_part(parts, "камера"))
     return presence
 
 
+def minecraft(coordinates: tuple):
+    """
+    📌 Задача 1. Координаты дома
+У дома в minecraft есть координаты – они хранятся в кортеже.
+Необходимо распаковать кортеж в три отдельные переменные: x, y, z.
+Затем вывести каждую координату на отдельной строке.
+    """
+    x,y,z = coordinates
+    return f"координаты дома x = {x},y = {y},z = {z}",
+
+
+def commands(command: list):
+    """
+    📌 Задача 2. Команда разработчиков
+Список содержит имена трёх участников команды. Необходимо распаковать список в три переменные: lead, developer, tester. Затем вывести каждого в формате, указанном ниже.
+
+Ожидаемый вывод:
+Лид: Артём
+Разработчик: Максим
+Тестировщик: Катя
+    """
+    lead, developer, tester = command
+    return f"Лид: {lead}\nРазработчик: {developer}\nТестировщик: {tester}"
+
+
+def squares():
+    """
+    📌 Задача 3. Таблица квадратов
+Необходимо с помощью list comprehension и range создать список квадратов чисел от 1 до 10.
+
+Ожидаемый вывод:
+[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+    """
+    line = [i ** 2 for i in range(1,11)]
+    return line
+
+
+def details(parts):
+    line = [i.upper() for i in parts]
+    return line
+
 if __name__ == '__main__':
-    parts = ["мотор", "датчик", "кабель", "колесо"]
-    check_part(parts,"мотор")
-    check_part(parts, "камера")
+    print(details(["мотор", "датчик", "кабель", "колесо", "сенсор"]))
