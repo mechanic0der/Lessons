@@ -1,3 +1,4 @@
+from fontTools.misc.cython import returns
 from openpyxl.utils import coordinate_to_tuple
 
 
@@ -98,7 +99,7 @@ def minecraft(coordinates: tuple):
     """
     📌 Задача 1. Координаты дома
 У дома в minecraft есть координаты – они хранятся в кортеже.
-Необходимо распаковать кортеж в три отдельные переменные: x, y, z.
+Необходимо распаковать кортеж в три отдельные переменные: x, y, z
 Затем вывести каждую координату на отдельной строке.
     """
     x,y,z = coordinates
@@ -215,5 +216,60 @@ grades = [4, 5, 3, 5, 4, 5, 2, 5]
     return line
 
 
+area = lambda a,b: a*b
+
+
+drop_last = lambda line_int:line_int // 10
+
+
+max3 = lambda a,b,c: max(a,b,c)
+
+
+full_name = lambda a,b: a.capitalize()+" "+b.capitalize()
+
+
+def average(*args):
+    """
+    📌 Задача 5. Средний балл
+Необходимо написать функцию:
+average(*args)
+Функция принимает любое количество оценок и возвращает их среднее значение, округлённое до 2 знаков после запятой. Использовать round().
+Пример:
+print(average(5, 4, 3, 5, 4))
+print(average(3, 3, 4))
+print(average(5, 5, 5, 5))
+Ожидаемый вывод:
+4.2
+3.33
+5.0
+    """
+    if not args:  # на случай, если оценок нет — чтобы не делить на ноль
+        return 0
+    return round(sum(args) / len(args), 2)
+
+
+def part_card(**kwargs):
+    """
+    📌 Задача 6. Карточка детали
+Необходимо написать функцию:
+part_card(**kwargs)
+Функция принимает характеристики детали и выводит каждую в формате ключ: значение. В конце выводит общее количество характеристик.
+Пример:
+part_card(name="Мотор",type="большой",voltage=9,rpm=160)
+Ожидаемый вывод:
+name: Мотор
+type: большой
+voltage: 9
+rpm: 160
+Всего характеристик: 4
+    """
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+    print(f"Всего характеристик: {len(kwargs)}")
+
+
 if __name__ == '__main__':
-    print(excellent_students([4, 5, 3, 5, 4, 5, 2, 5]))
+    part_card(name="Мотор",
+            type="большой",
+            voltage=9,
+            rpm=160)
