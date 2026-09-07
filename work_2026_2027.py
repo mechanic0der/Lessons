@@ -50,6 +50,34 @@ def test_set(numbers: set):
     print(a - b)
 
 
+def dict_1(r,it=67):
+    students = {"name": "Вася","age": 21}
+    students["city"] = "Москва"
+    students["age"] = 22
+    for i in students.values():
+        print(i)
+    city = students.pop("city","6767676767676767676767676767677676767676767676767676767676767676767676767676767676767")
+    print(students)
+    print(city)
+    students.popitem()
+    print(students)
+    students_2 = {"age": 6767676767676767676767676767677676767676767676767676767676767676767676767676767676767}
+    students.update(students_2)
+    print(students)
+    keys = ["name","age","city"]
+    user = dict.fromkeys(keys)
+    print(user)
+
+
+def pank(*args):
+    print(args)
+
+
+def pank_2(**kwargs):
+    print(kwargs)
+
+
+number2 = lambda x: x ** 2
 
 
 if __name__ == "__main__":
