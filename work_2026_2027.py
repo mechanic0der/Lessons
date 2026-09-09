@@ -80,5 +80,15 @@ def pank_2(**kwargs):
 number2 = lambda x: x ** 2
 
 
+def list_comprehension(line: list):
+    line_2 = [i for i in line if i % 2 == 0 ]
+    line_3 = [i if i % 2 == 0 else 0 for i in line]
+    line_4 = ["большой" if i > 5 else "маленький" for i in line if i % 2 == 0]
+    age = 7
+    status = "Взрослый" if age >= 18 else "Детский"
+    a = "Привет"
+    return line_2, line_3, status,repr(a),line_4
+
+
 if __name__ == "__main__":
-    test_set({1})
+    print(list_comprehension([1,2,3,4,5,6,7,8]))
