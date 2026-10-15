@@ -1,5 +1,9 @@
+import time
+
 from fontTools.misc.cython import returns
 from openpyxl.utils import coordinate_to_tuple
+from copy import deepcopy
+from random import randint
 
 
 def check_even(number: int):
@@ -362,5 +366,220 @@ scores = [120, 45, 300, 80, 510, 210, 15]
     return line
 
 
+def minecraft_():
+    invetory = [
+        ["меч","щит"],
+        ["зелье","еда"]
+    ]
+    invetory_2 = deepcopy(invetory)
+    invetory_2[1].append("факел")
+    invetory_2[0][0] = ["лук"]
+    return invetory, invetory_2
+
+
+def profile():
+    players = [
+    {
+    "name": "Иван",
+    "level": 10,
+    "items": ["меч", "зелье"]
+    },
+    {
+    "name": "Олег",
+   "level": 7,
+    "items": ["лук"]
+    }
+    ]
+    players_2 = deepcopy(players)
+    players_2[0]["level"] = 15
+    players_2[0]["items"].append("щит")
+    players_2.append({"name": "Анна",
+                      "level": 7,
+                      "items": ["лук"]
+                      })
+    return players, players_2
+
+
+def else_in_for(numbers):
+    for i in numbers:
+        if i == 4:
+            print("4 нашлась")
+            break
+    else:
+        print("4 не найдена")
+
+
+def copy_settings():
+    settings = {
+    "graphics": {
+    "quality": "high",
+    "resolution": [1920, 1080]
+    },
+    "sound": {
+    "music": 80,
+    "effects": 70
+    }
+    }
+    settings_2 = deepcopy(settings)
+    settings_2["graphics"]["quality"] = "low"
+    settings_2["graphics"]["resolution"] = [1280,720]
+    print(settings)
+    print(settings_2)
+
+
+shop = lambda price: price * 0.8
+
+
+check = lambda word: "длинное"if len(word) >= 10 else "короткое"
+
+
+def total_prices(*prices):
+    print(sum(prices))
+
+
+def poisk(parts):
+    for i in parts:
+        if i == "камера":
+            return "Камера есть!"
+
+    else:
+        return "Камеры нет"
+
+
+
+
+def i_dont_no(grades):
+    for i in grades:
+        if i == 2:
+            return "Есть двойка!"
+
+    else:
+        return "Отличная неделя!"
+
+
+def countdown(n):
+    print(n)
+    if n == 1:
+        return "Пуск!"
+    else:
+        return countdown(n - 1)
+
+
+def sum_to(n):
+    if n == 0:
+        return 0
+    else:
+        return n + sum_to(n - 1)
+
+
+def count_parts(box):
+    total = 0
+    for i in box:
+        if isinstance(i, int):
+            total += i
+        elif isinstance(i, list):
+            total += count_parts(i)
+    return total
+
+
+box = [3, [2, 5], [1, [4, 2]], 6]
+(count_parts(box))
+
+
+def count_depth(folder):
+    max_depth = 1
+
+    for item in folder:
+        if isinstance(item, list):
+            current_depth = 1 + count_depth(item)
+            max_depth = max(max_depth, current_depth)
+
+    return max_depth
+
+folder = ["файл1.txt", ["файл2.txt", ["файл3.txt"]], "файл4.txt"]
+(count_depth(folder))
+
+
+def shoot(name):
+    print(f"{name} стреляет!")
+
+def super_attack(name):
+    print(f"{name} использует супер!")
+
+def heal(name):
+    print(f"{name} лечится!")
+
+
+actions = [shoot, super_attack, heal]
+
+br_name = "Спайк"
+
+
+def to_upper(text):
+    return text.upper()
+
+def to_lower(text):
+    return text.lower()
+
+def apply(func, text):
+    return func(text)
+
+
+def square(n):
+    return n ** 2
+
+def cube(n):
+    return n ** 3
+math_ops = {
+    "square": square,
+    "cube": cube
+}
+
+
+def cheap(prices):
+    return prices * 0.9
+
+
+def city(cities):
+    return len(cities)
+
+
+def age(ages):
+    return ages >= 18
+
+
+def i_dont_no_2(words):
+    return len(words) > 0
+
+
+sorted_numbers = lambda x: x % 3
+
+
+word = lambda x:x[1]
+
+
+def decorator(func):
+    def wrapper(*args,**kwargs):
+        start = time.time()
+        result = func(*args,**kwargs)
+        end = time.time()
+        print(f"время выполнения функции {end-start}")
+        return result
+    return wrapper
+
+@decorator
+def poisc(parts):
+    for i in parts:
+        if i.lower() == "камера":
+            return "Камера есть!"
+
+    else:
+        return "Камеры нет"
+
+@decorator
+def i_dont_know_3(tttttt:str):
+    return tttttt.upper()
+
+
 if __name__ == '__main__':
-    print(score())
+    print(poisc(["камера","hfjfg","hdydy"]))
