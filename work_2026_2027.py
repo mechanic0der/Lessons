@@ -1,3 +1,6 @@
+from openpyxl.styles.builtins import total
+
+
 def yt():
     f = "return"
     print(f[1:])
@@ -90,5 +93,80 @@ def list_comprehension(line: list):
     return line_2, line_3, status,repr(a),line_4
 
 
+def test_error_2():
+    try:
+        a = int(input())
+        b = int(input())
+        print(a / b)
+    except Exception as error:
+        print(f"произошла ошибка: {error}")
+    else:
+        print("error - no")
+    finally:
+        print("k - s")
+
+
+def check_age(age):
+    if age < 0:
+        raise ValueError("возраст не может быть отрицательным")
+    return age
+
+
+def test_else():
+    numbers = [67,67,67,5]
+    for i in numbers:
+        if i == 5:
+            print("5!!!!!!!")
+            break
+    else:
+        print("5 - нет")
+
+
+def test_morj67():
+    data = [9,4,"m"]
+    n = len(data)
+    if n > 2:
+        print(n)
+    if (m := len(data)) > 2:
+        print(m)
+
+
+def file_error():
+    with open("jkd,cdl;cdf;.txt","r") as file:
+        file.read()
+
+
+def f_str(number):
+    for i in range(number):
+        r = f"Мне {number} лет"
+        print(r)
+
+
+def f_file(name = 67):
+    try:
+        with open(f"{name}.txt","r") as file:
+            print(file.read())
+    except FileNotFoundError:
+        with open("67.txt","r") as file:
+            print(file.read())
+
+
+
+def file_(number):
+    r = number * 5
+    total = (r + number) ** 2
+    return total
+
+
+def file_2(total):
+    with open("total.txt","w+") as file:
+        file.write(f"{total}")
+        file.seek(0)
+        return file.read()
+
+
+
+        
 if __name__ == "__main__":
-    print(list_comprehension([1,2,3,4,5,6,7,8]))
+    a = file_(2)
+    print(file_2(a))
