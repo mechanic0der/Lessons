@@ -165,8 +165,58 @@ def file_2(total):
         return file.read()
 
 
+def glas_(line:str):
+    result = 0
+    glas = "аоеёюяэуыи"
+    for i in line.lower():
+        if i in glas:
+            result += 1
+    return result
 
-        
+
+def chet(f):
+    return f % 2 == 0
+
+
+def hero2(x):
+    return x ** 2
+
+
+def len_1(word):
+    return len(word)
+
+
+def i (text):
+    return text.lower().replace(" ","") == text[::-1].lower().replace(" ","")
+
+
+def format1():
+    s = {}
+    with open(f"{input("")}.txt","r") as file:
+        a = file.read().split()
+    with open(f"{input("")}.txt","a") as _:
+        for i in a:
+            if i in s:
+                s[i] += 1
+            else:
+                s[i] = 1
+    print(s)
+
+
+class Person:
+    def __init__(self, name,surname, strength, age):
+        self.name = name
+        self.surname = surname
+        self.strength = strength
+        self.age = age
+    def goal(self):
+        print(f"{self.name} {self.surname} забивает гол")
+
+
+
+
 if __name__ == "__main__":
-    a = file_(2)
-    print(file_2(a))
+    futbol1 = Person("Lamine","Yamal",72358953407845678964578934567890,21)
+    futbol1.goal()
+    futbol2 = Person("Leo","Messi",676776767676767767676767676767767676776894578965789,37)
+
